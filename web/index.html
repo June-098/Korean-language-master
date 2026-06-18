@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Korean Master</title>
+    <style>
+      * { box-sizing: border-box; }
+      html { height: 100%; background-color: #1a1a2e; }
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background-color: #1a1a2e;
+      }
+      #root {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        background-color: #1a1a2e;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <!--
+      SCROLL FIX for React Native Web + React Navigation.
+
+      Problem: RNW renders each screen's <ScrollView> as a flex:1 container, but
+      on web that container ends up with `overflow: visible` instead of `auto`.
+      The content (taller than the viewport) then spills out and is clipped by
+      the body, with no way to scroll. Verified live: the container IS bounded to
+      the viewport height and its child content is taller — it simply lacks
+      `overflow-y: auto`.
+
+      Fix: locate that bounded container for the currently visible screen and
+      give it `overflow-y: auto`. Re-run on navigation (interval + clicks +
+      DOM mutations). A wheel/touch forwarder is added as a guarantee so input
+      always reaches the scroll container on both desktop and iOS Safari.
+    -->
+    <script>
+      (function () {
+        var currentScrollEl = null;
+
+        // Walk the DOM for the visible screen and find the bounded flex
+        // container whose child content overflows it, then make it scrollable.
+        function fixScroll() {
+          var root = document.getElementById('root');
+          if (!root) return;
+          var vh = window.innerHeight;
+          var el = root, target = null, depth = 0;
+
+          while (el && depth < 40) {
+            var next = null, max = -1;
+            for (var i = 0; i < el.children.length; i++) {
+              var c = el.children[i];
+              if (c.tagName === 'DIV' && c.scrollHeight > max) {
+                max = c.scrollHeight;
+                next = c;
+              }
+            }
+            if (
+              next &&
+              el.clientHeight <= vh + 2 &&
+              next.scrollHeight > el.clientHeight + 4 &&
+              next.offsetHeight > el.clientHeight
+            ) {
+              target = el; // keep the innermost qualifying container
+            }
+            el = next;
+            depth++;
+          }
+
+          if (target) {
+            target.style.setProperty('overflow-y', 'auto', 'important');
+            target.style.setProperty('overflow-x', 'hidden', 'important');
+            target.style.setProperty('-webkit-overflow-scrolling', 'touch', 'important');
+            currentScrollEl = target;
+          }
+        }
+
+        // Belt-and-suspenders: forward wheel/touch to the scroll container.
+        function activeScrollEl() {
+          if (
+            currentScrollEl &&
+            document.contains(currentScrollEl) &&
+            currentScrollEl.scrollHeight > currentScrollEl.clientHeight + 2
+          ) {
+            return currentScrollEl;
+          }
+          // Fallback: first scrollable element under #root
+          var divs = document.querySelectorAll('#root div');
+          for (var i = 0; i < divs.length; i++) {
+            var s = window.getComputedStyle(divs[i]);
+            if (
+              (s.overflowY === 'auto' || s.overflowY === 'scroll') &&
+              divs[i].scrollHeight > divs[i].clientHeight + 2
+            ) {
+              return divs[i];
+            }
+          }
+          return null;
+        }
+
+        document.addEventListener('wheel', function (e) {
+          var el = activeScrollEl();
+          if (el) el.scrollTop += e.deltaY;
+        }, { passive: true });
+
+        var lastY = 0;
+        document.addEventListener('touchstart', function (e) {
+          lastY = e.touches[0].clientY;
+        }, { passive: true });
+        document.addEventListener('touchmove', function (e) {
+          var y = e.touches[0].clientY;
+          var el = activeScrollEl();
+          if (el) el.scrollTop += (lastY - y);
+          lastY = y;
+        }, { passive: true });
+
+        // Run repeatedly so navigation between screens stays fixed.
+        function schedule() {
+          fixScroll();
+          setTimeout(fixScroll, 150);
+          setTimeout(fixScroll, 500);
+        }
+        if (document.readyState === 'complete' || document.readyState === 'interactive') {
+          schedule();
+        } else {
+          window.addEventListener('DOMContentLoaded', schedule);
+        }
+        window.addEventListener('load', schedule);
+        document.addEventListener('click', function () { setTimeout(schedule, 50); });
+        setInterval(fixScroll, 600);
+
+        // React to DOM changes (screen transitions add/remove subtrees).
+        var mo = new MutationObserver(function () { fixScroll(); });
+        window.addEventListener('load', function () {
+          mo.observe(document.getElementById('root'), { childList: true, subtree: true });
+        });
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,270 @@
+import { Chapter } from './chapter1';
+
+const chapter3: Chapter = {
+  id: 3,
+  title: 'Chapter 3',
+  subtitle: 'Greetings & Meeting People',
+  emoji: '👋',
+  description:
+    'First impressions matter deeply in Korean culture. Koreans bow instead of shaking hands, use different speech levels depending on age and relationship, and have specific greetings for every time of day. This chapter gives you everything you need to confidently meet locals, greet shop owners, and even charm your way through a K-pop fan meet!',
+
+  sections: [
+    {
+      title: 'The Art of Bowing (인사 — In-sa)',
+      content:
+        'In Korea, bowing is the equivalent of a handshake, a wave, and a "thank you" all in one. The depth of the bow signals respect:\n\n• 15° bow — casual acknowledgement between friends\n• 30° bow — standard polite greeting (use this as a foreigner and everyone will love you)\n• 45° bow — deep respect for elders or very formal situations\n\nFun fact: At BTS concerts, the members bow 90° to their fans at the end — that level of deep respect toward their audience is a huge part of why Korean fan culture feels so special.',
+      examples: [
+        { korean: '인사', romanization: 'in-sa', english: 'Greeting / to greet (also means "bow")' },
+        { korean: '존댓말', romanization: 'jon-daet-mal', english: 'Formal/polite speech — use with elders, strangers, staff' },
+        { korean: '반말', romanization: 'ban-mal', english: 'Informal speech — use with close friends your age or younger' },
+      ],
+    },
+    {
+      title: 'Essential Greetings (Formal)',
+      content:
+        'Formal speech (존댓말) ends sentences with -요 or -ㅂ니다. Always use formal speech with:\n• Shop owners and restaurant staff\n• Anyone older than you\n• People you\'ve just met\n\nThis is the speech level you\'ll use 90% of the time as a traveler in Korea. When in doubt — go formal!',
+      examples: [
+        { korean: '안녕하세요', romanization: 'an-nyeong-ha-se-yo', english: 'Hello (universal formal greeting, any time of day)' },
+        { korean: '안녕히 가세요', romanization: 'an-nyeong-hi ga-se-yo', english: 'Goodbye (said to someone who is leaving)' },
+        { korean: '안녕히 계세요', romanization: 'an-nyeong-hi gye-se-yo', english: 'Goodbye (said when YOU are leaving, to someone staying)' },
+        { korean: '감사합니다', romanization: 'gam-sa-ham-ni-da', english: 'Thank you (most formal)' },
+        { korean: '고맙습니다', romanization: 'go-map-seum-ni-da', english: 'Thank you (also formal, slightly warmer)' },
+        { korean: '죄송합니다', romanization: 'joe-song-ham-ni-da', english: 'I am deeply sorry (formal apology)' },
+        { korean: '실례합니다', romanization: 'sil-lye-ham-ni-da', english: 'Excuse me (getting attention politely)' },
+        { korean: '처음 뵙겠습니다', romanization: 'cheo-eum boep-get-seum-ni-da', english: 'Nice to meet you for the first time (very formal)' },
+        { korean: '잘 부탁드립니다', romanization: 'jal bu-tak-deu-rim-ni-da', english: 'Please take care of me / I look forward to working with you' },
+      ],
+    },
+    {
+      title: 'Greetings by Time of Day',
+      content:
+        'Korean has specific greetings for morning and night — though 안녕하세요 works at any time. These are great to use with hotel staff or when entering a restaurant in the morning.',
+      examples: [
+        { korean: '좋은 아침이에요', romanization: 'jo-eun a-chim-i-e-yo', english: 'Good morning (lit. "It\'s a good morning")' },
+        { korean: '좋은 저녁이에요', romanization: 'jo-eun jeo-nyeo-gi-e-yo', english: 'Good evening' },
+        { korean: '잘 자요', romanization: 'jal ja-yo', english: 'Good night / Sleep well' },
+        { korean: '안녕히 주무세요', romanization: 'an-nyeong-hi ju-mu-se-yo', english: 'Good night (very formal, said to elders)' },
+      ],
+    },
+    {
+      title: 'Introducing Yourself (자기소개 — Ja-gi-so-gae)',
+      content:
+        'In K-dramas, the first meeting between characters is everything. Learn how to introduce yourself — name, where you\'re from, and a compliment — and you\'ll make instant friends. Koreans absolutely love when foreigners try to speak Korean, even a little!',
+      examples: [
+        { korean: '제 이름은 ___ 입니다', romanization: 'je i-reum-eun ___ im-ni-da', english: 'My name is ___ (formal)' },
+        { korean: '저는 미국에서 왔어요', romanization: 'jeo-neun mi-gu-ge-seo wa-sseo-yo', english: 'I am from America' },
+        { korean: '저는 한국이 좋아요', romanization: 'jeo-neun han-gu-gi jo-a-yo', english: 'I like Korea' },
+        { korean: '한국어를 조금 해요', romanization: 'han-gu-geo-reul jo-geum hae-yo', english: 'I speak a little Korean (locals will cheer!)' },
+        { korean: '반갑습니다', romanization: 'ban-gap-seum-ni-da', english: 'Nice to meet you (formal, warm)' },
+        { korean: '잘 지내셨어요?', romanization: 'jal ji-nae-syeo-sseo-yo', english: 'How have you been? (formal)' },
+        { korean: '덕분에 잘 지냈어요', romanization: 'deok-bu-ne jal ji-nae-sseo-yo', english: 'I\'ve been well, thanks to you' },
+      ],
+    },
+    {
+      title: 'Casual Greetings (Informal — 반말)',
+      content:
+        'Use informal speech ONLY with close friends your age or younger siblings. Never use it with strangers or elders — it can come across as rude. In K-pop idol friendships (like between BTS members), they freely use 반말 with each other because they\'re close friends.',
+      examples: [
+        { korean: '안녕', romanization: 'an-nyeong', english: 'Hi / Bye (casual — drop the 하세요)' },
+        { korean: '잘 지냈어?', romanization: 'jal ji-nae-sseo?', english: 'How have you been? (casual)' },
+        { korean: '나 왔어', romanization: 'na wa-sseo', english: 'I\'m here / I arrived (casual)' },
+        { korean: '고마워', romanization: 'go-ma-wo', english: 'Thanks (casual)' },
+        { korean: '미안해', romanization: 'mi-an-hae', english: 'Sorry (casual)' },
+        { korean: '보고 싶었어', romanization: 'bo-go si-peo-sseo', english: 'I missed you (casual — straight from K-drama scripts!)' },
+      ],
+    },
+    {
+      title: 'Useful Conversation Phrases',
+      content:
+        'These phrases save you in almost any awkward social situation — whether you\'re lost, confused, or just can\'t quite catch what someone said.',
+      examples: [
+        { korean: '이해했어요', romanization: 'i-hae-hae-sseo-yo', english: 'I understand' },
+        { korean: '모르겠어요', romanization: 'mo-reu-ge-sseo-yo', english: 'I don\'t know / I\'m not sure' },
+        { korean: '다시 말해 주세요', romanization: 'da-si mal-hae ju-se-yo', english: 'Please say that again' },
+        { korean: '천천히 말해 주세요', romanization: 'cheon-cheon-hi mal-hae ju-se-yo', english: 'Please speak slowly' },
+        { korean: '영어 할 줄 아세요?', romanization: 'yeong-eo hal jul a-se-yo?', english: 'Do you speak English?' },
+        { korean: '한국어를 잘 못해요', romanization: 'han-gu-geo-reul jal mo-tae-yo', english: 'My Korean isn\'t very good' },
+        { korean: '괜찮아요', romanization: 'gwaen-chan-a-yo', english: 'It\'s okay / No problem / Are you alright?' },
+      ],
+    },
+  ],
+
+  wordQuiz: [
+    {
+      id: 1,
+      question: 'What does 안녕하세요 (an-nyeong-ha-se-yo) mean?',
+      korean: '안녕하세요',
+      options: ['Goodbye', 'Hello', 'Thank you', 'I\'m sorry'],
+      answer: 'Hello',
+    },
+    {
+      id: 2,
+      question: 'What does 감사합니다 (gam-sa-ham-ni-da) mean?',
+      korean: '감사합니다',
+      options: ['Sorry', 'Please', 'Thank you', 'Goodbye'],
+      answer: 'Thank you',
+    },
+    {
+      id: 3,
+      question: 'What is 반말 (ban-mal)?',
+      korean: '반말',
+      options: ['Formal speech', 'Informal speech', 'Written language', 'Old Korean'],
+      answer: 'Informal speech',
+    },
+    {
+      id: 4,
+      question: 'What does 괜찮아요 (gwaen-chan-a-yo) mean?',
+      korean: '괜찮아요',
+      options: ['I\'m hungry', 'It\'s okay', 'I don\'t know', 'Nice to meet you'],
+      answer: 'It\'s okay',
+    },
+    {
+      id: 5,
+      question: 'Which phrase means "Please speak slowly"?',
+      korean: '천천히 말해 주세요',
+      options: [
+        '다시 말해 주세요',
+        '천천히 말해 주세요',
+        '영어 할 줄 아세요?',
+        '모르겠어요',
+      ],
+      answer: '천천히 말해 주세요',
+    },
+    {
+      id: 6,
+      question: 'What does 반갑습니다 (ban-gap-seum-ni-da) mean?',
+      korean: '반갑습니다',
+      options: ['Goodbye', 'Good morning', 'Nice to meet you', 'Excuse me'],
+      answer: 'Nice to meet you',
+    },
+    {
+      id: 7,
+      question: 'What is the casual way to say "Hi" or "Bye"?',
+      korean: '안녕',
+      options: ['안녕하세요', '감사합니다', '안녕', '죄송합니다'],
+      answer: '안녕',
+    },
+    {
+      id: 8,
+      question: 'What does 죄송합니다 (joe-song-ham-ni-da) mean?',
+      korean: '죄송합니다',
+      options: ['Thank you', 'Hello', 'I am deeply sorry', 'Nice to meet you'],
+      answer: 'I am deeply sorry',
+    },
+    {
+      id: 9,
+      question: 'What does 보고 싶었어 (bo-go si-peo-sseo) mean?',
+      korean: '보고 싶었어',
+      options: ['I\'m happy', 'I missed you', 'See you later', 'Let\'s go'],
+      answer: 'I missed you',
+    },
+    {
+      id: 10,
+      question: 'What does 실례합니다 (sil-lye-ham-ni-da) mean?',
+      korean: '실례합니다',
+      options: ['I\'m sorry', 'Excuse me', 'Thank you', 'Good night'],
+      answer: 'Excuse me',
+    },
+  ],
+
+  sentenceQuiz: [
+    {
+      id: 1,
+      instruction: 'Fill in the blank with the correct greeting.',
+      sentence: 'To say "Hello" formally at any time of day, you say "___".',
+      korean: '언제든지 "안녕하세요"라고 합니다.',
+      options: ['안녕', '잘 자요', '안녕하세요', '감사합니다', '죄송합니다'],
+      answer: '안녕하세요',
+      translation: 'To say "Hello" formally at any time of day, you say "안녕하세요".',
+    },
+    {
+      id: 2,
+      instruction: 'Fill in the blank with the correct phrase.',
+      sentence: 'To introduce your name formally: 제 이름은 ___ 입니다.',
+      korean: '제 이름은 ___ 입니다.',
+      options: ['어디', '얼마', '___ (your name)', '안녕', '감사'],
+      answer: '___ (your name)',
+      translation: '제 이름은 ___ 입니다 means "My name is ___".',
+    },
+    {
+      id: 3,
+      instruction: 'Choose the correct goodbye phrase when YOU are leaving.',
+      sentence: 'When you are leaving a shop, you say "___" to the staff.',
+      korean: '가게에서 나갈 때 "안녕히 계세요"라고 합니다.',
+      options: ['안녕히 가세요', '안녕히 계세요', '잘 자요', '안녕', '감사합니다'],
+      answer: '안녕히 계세요',
+      translation: 'When YOU are leaving, you say "안녕히 계세요" to those staying.',
+    },
+    {
+      id: 4,
+      instruction: 'Fill in the blank with the correct speech level.',
+      sentence: 'With strangers and elders, always use ___ (formal speech).',
+      korean: '낯선 사람과 어른에게는 존댓말을 써야 합니다.',
+      options: ['반말', '존댓말', '한글', '인사', '안녕'],
+      answer: '존댓말',
+      translation: 'With strangers and elders, always use 존댓말 (formal speech).',
+    },
+    {
+      id: 5,
+      instruction: 'Choose the phrase meaning "Please say that again".',
+      sentence: 'If you didn\'t catch what someone said, ask: "___"',
+      korean: '못 들었을 때 "다시 말해 주세요"라고 합니다.',
+      options: [
+        '천천히 말해 주세요',
+        '모르겠어요',
+        '다시 말해 주세요',
+        '괜찮아요',
+        '영어 할 줄 아세요?',
+      ],
+      answer: '다시 말해 주세요',
+      translation: 'If you didn\'t catch what someone said, ask: "다시 말해 주세요".',
+    },
+    {
+      id: 6,
+      instruction: 'Fill in the blank with the correct word.',
+      sentence: '저는 한국이 ___ — "I like Korea."',
+      korean: '저는 한국이 좋아요.',
+      options: ['맵다', '비싸다', '좋아요', '모르겠어요', '괜찮아요'],
+      answer: '좋아요',
+      translation: '저는 한국이 좋아요 means "I like Korea."',
+    },
+    {
+      id: 7,
+      instruction: 'Choose the casual equivalent of 감사합니다.',
+      sentence: 'The casual way to say "thanks" to a close friend is "___".',
+      korean: '친한 친구에게는 "고마워"라고 합니다.',
+      options: ['감사합니다', '죄송합니다', '고마워', '반갑습니다', '실례합니다'],
+      answer: '고마워',
+      translation: 'The casual way to say "thanks" is "고마워".',
+    },
+    {
+      id: 8,
+      instruction: 'Fill in the blank.',
+      sentence: '"한국어를 조금 ___" means "I speak a little Korean".',
+      korean: '한국어를 조금 해요.',
+      options: ['알아요', '해요', '가요', '봐요', '먹어요'],
+      answer: '해요',
+      translation: '"한국어를 조금 해요" means "I speak a little Korean".',
+    },
+    {
+      id: 9,
+      instruction: 'Choose the correct phrase for "Good night" to an elder.',
+      sentence: 'To wish an elder good night very formally, you say "___".',
+      korean: '어른에게 "안녕히 주무세요"라고 합니다.',
+      options: ['잘 자요', '안녕', '좋은 아침이에요', '안녕히 주무세요', '괜찮아요'],
+      answer: '안녕히 주무세요',
+      translation: 'To wish an elder good night very formally, say "안녕히 주무세요".',
+    },
+    {
+      id: 10,
+      instruction: 'Fill in the blank.',
+      sentence: '"영어 할 줄 ___?" means "Do you speak English?"',
+      korean: '영어 할 줄 아세요?',
+      options: ['가세요', '오세요', '아세요', '주세요', '있어요'],
+      answer: '아세요',
+      translation: '"영어 할 줄 아세요?" means "Do you speak English?"',
+    },
+  ],
+};
+
+export default chapter3;
