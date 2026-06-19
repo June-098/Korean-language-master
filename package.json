@@ -19,6 +19,7 @@
     "expo-asset": "^56.0.17",
     "expo-font": "~56.0.7",
     "expo-linear-gradient": "~56.0.4",
+    "expo-speech": "~56.0.3",
     "expo-status-bar": "~56.0.4",
     "react": "19.2.3",
     "react-dom": "19.2.3",
@@ -30,7 +31,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.24.0",
-    "@types/react": "~18.2.79",
+    "@types/react": "~19.2.0",
     "typescript": "~5.3.3"
   },
   "private": true
